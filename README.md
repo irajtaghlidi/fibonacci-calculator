@@ -1,25 +1,31 @@
 # fibonacci-calculator
-
-Fibonacci sequence calculator and check whether a number is part of the Fibonacci sequence or not
+Fibonacci sequence calculator and check whether a number is part of the Fibonacci sequence or not.
 
 ## Build Docker image
-```bash
-git clone https://github.com/irajtaghlidi/fibonacci-calculator.git
-cd fibonacci-calculator
 
-docker build . -t fibonacci-calculator:latest
+Use Git hub version
+```bash
+git clone https://gitlab.com/irajtaghlidi/fibonacci-calculator.git
+cd fibonacci-calculator
+docker build . -t fibonacci-calculator:local
+```
+OR
+use the online Docker Hub Image
+**this image is builded, tested and pushed to Docker Hub with GitLab CI/CD (`.gitlab-ci.yml` file).**
+```bash
+docker pull irajtaghlidi/fibonacci-calculator:latest
 ```
 
 ## Usage
-showing how to work with program.
+Show help of application from local builed image:
 ```bash
-docker run --rm fibonacci-calculator:latest --help
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --help
 ```
+The ```---calc``` argument is used to calculate and show reverese order of specific number of Fibonacci sequence.
 
-The  ```---calc``` argument is used to calculate and show reverese order of specific number of Fibonacci sequence.
 For example to calculate first 20 Fibonacci numbers:
 ```bash
-docker run --rm fibonacci-calculator:latest --calc 10
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --calc 10
 ```
 OUTPUT:
 ```bash
@@ -36,16 +42,29 @@ OUTPUT:
 ```
 
 The ```---check``` argument is used to check whether a number is part of the Fibonacci sequence or not.
-For example to check number 55 is part of Fibonacci sequence or not:
+
+Example 1: Check number 36 is part of Fibonacci sequence or not:
 ```bash
-docker run --rm fibonacci-calculator:latest --check 34
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --check 36
+```
+OUTPUT:
+```bash
+0
+```
+Example 2: Check number 55 is part of Fibonacci sequence or not:
+```bash
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --check 55
+```
+OUTPUT:
+```bash
+1
 ```
 
 ## Debug
 the ```-v``` or ```--verbose``` argument is used to show more details in outputs.
 for example in ```--calc``` argument we can see index numbers too.
 ```bash
-docker run --rm fibonacci-calculator:latest --calc 10 --verbose
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --calc 10 --verbose
 ```
 OUTPUT:
 ```
@@ -64,18 +83,20 @@ OUTPUT:
 and also in ```--check``` argument we can see index of input number if it is part of Fibonacci sequence.
 
 ```bash
-docker run --rm fibonacci-calculator:latest --check 34 --verbose
+docker run --rm irajtaghlidi/fibonacci-calculator:latest --check 34 --verbose
 ```
 
 OUTPUT:
 ```
 True: This number is #9 in Fibonacci sequent
 ```
-
-
+## Test
+To run Unit test:
+```bash
+python test.py
+```
 ## TODO:
 * we can use 'fast doubling Fibonacci algorithm' to achive a lower time complexity but in my benchmarks the current method is fast enough for now.
 * adding more verbose levels.
-* add test methods for python scripts.
 * add a Bash script to build docker image easily.
 * ANYTHINK YOU LIKE! your contribution is welcome.
