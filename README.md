@@ -10,7 +10,7 @@ cd fibonacci-calculator
 docker build . -t fibonacci-calculator:local
 ```
 OR
-use the online Docker Hub Image
+use the online Docker Hub Image.
 **this image is builded, tested and pushed to Docker Hub with GitLab CI/CD (`.gitlab-ci.yml` file).**
 ```bash
 docker pull irajtaghlidi/fibonacci-calculator:latest
@@ -88,7 +88,7 @@ docker run --rm irajtaghlidi/fibonacci-calculator:latest --check 34 --verbose
 
 OUTPUT:
 ```
-True: This number is #9 in Fibonacci sequent
+True: This number is #10 in Fibonacci sequent
 ```
 ## Test
 To run Unit test:
