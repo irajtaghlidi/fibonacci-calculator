@@ -8,4 +8,4 @@ COPY fibonacci.py .
 COPY start.py .
 COPY test.py .
 
-ENTRYPOINT [ "python", "./start.py" ]
+ENTRYPOINT [ "python", "./app.py" ]
