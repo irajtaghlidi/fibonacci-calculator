@@ -75,5 +75,7 @@ True: This number is #9 in Fibonacci sequent
 
 ## TODO:
 * we can use 'fast doubling Fibonacci algorithm' to achive a lower time complexity but in my benchmarks the current method is fast enough for now.
-* adding more verbose levels
+* adding more verbose levels.
+* add test methods for python scripts.
+* add a Bash script to build docker image easily.
 * ANYTHINK YOU LIKE! your contribution is welcome.
