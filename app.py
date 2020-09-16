@@ -32,31 +32,31 @@ def main():
 
 
 
-def print_out(data_array, verbose_level = 0, glue = "\n"):
-    """ Print List with variable message and Glue/seprator. """
-    if verbose_level > 0:
-        index = len(data_array)
-        for number in data_array:
-            print("#{0}: {1}".format(index, number))
-            index -= 1
-    else:
-        output = glue.join(map(str, data_array))
+def print_out(data_list, verbose_level = 0, glue = "\n"):
+    # Print data with Glue/seprator
+    if verbose_level == 0:
+        # just print elements in normal
+        output = glue.join(map(str, data_list))
         print(output)
-
+    else:
+        # Print with index number in debug mode
+        location = len(data_list)
+        for number in data_list:
+            print("#{0}: {1}".format(location, number))
+            location -= 1
 
 
 def print_fibonacci_result(result, verbose_level):
     if result[0] == True:
-        if verbose_level > 0:
-            print("True: This number is #{0} in Fibonacci sequent".format(result[1]))
-        else:
-            # print("1:{0}".format(result[1]))
+        if verbose_level == 0:
             print("1")
-    else:
-        if verbose_level > 0:
-            print("False: Unfortunately this number is NOT in Fibonacci sequent")
         else:
+            print("True: This number is #{0} in Fibonacci sequent".format(result[1]))
+    else:
+        if verbose_level == 0:
             print("0")
+        else:
+            print("False: Unfortunately this number is NOT in Fibonacci sequent")
 
 
 
