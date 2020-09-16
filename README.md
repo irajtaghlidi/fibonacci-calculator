@@ -11,6 +11,7 @@ docker build . -t fibonacci-calculator:local
 ```
 OR
 use the online Docker Hub Image.
+
 **this image is builded, tested and pushed to Docker Hub with GitLab CI/CD (`.gitlab-ci.yml` file).**
 ```bash
 docker pull irajtaghlidi/fibonacci-calculator:latest

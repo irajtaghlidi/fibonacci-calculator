@@ -27,8 +27,8 @@ def check_number(input_int):
     fibonacci_number = 0
     while fibonacci_number <= input_int:
         if fibonacci_number == input_int:
-            secuence_location = sequence_index + 1
-            return [True, secuence_location] # return with +1 to start form 1 for first element, instead 0 in lists/arrays key.
+            secuence_location = sequence_index + 1  # location is started form 1, instead 0 in lists/arrays key.
+            return [True, secuence_location]
 
         sequence_index += 1
         fibonacci_number = fibonacci_element(sequence_index)
