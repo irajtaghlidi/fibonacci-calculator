@@ -25,7 +25,7 @@ def main():
         user_input = int(args.calc)
         # calculate Fibonacci sequense
         sequence = fibonacci.sequence_calc(user_input)
-        # reverese sequence and print it
+        # reverse sequence and print it
         sequence.reverse()
         print_out(sequence, verbose_level)
 
