@@ -23,7 +23,7 @@ docker run --rm irajtaghlidi/fibonacci-calculator:latest --help
 ```
 The ```---calc``` argument is used to calculate and show reverese order of specific number of Fibonacci sequence.
 
-For example to calculate first 20 Fibonacci numbers:
+For example to calculate first 10 Fibonacci numbers:
 ```bash
 docker run --rm irajtaghlidi/fibonacci-calculator:latest --calc 10
 ```
