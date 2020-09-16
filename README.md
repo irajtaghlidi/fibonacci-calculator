@@ -7,19 +7,19 @@ Fibonacci sequence calculator and check whether a number is part of the Fibonacc
 git clone https://github.com/irajtaghlidi/fibonacci-calculator.git
 cd fibonacci-calculator
 
-docker build . -t fibonacci:latest
+docker build . -t fibonacci-calculator:latest
 ```
 
 ## Usage
 showing how to work with program.
 ```bash
-docker run --rm fibonacci:latest --help
+docker run --rm fibonacci-calculator:latest --help
 ```
 
 The  ```---calc``` argument is used to calculate and show reverese order of specific number of Fibonacci sequence.
 For example to calculate first 20 Fibonacci numbers:
 ```bash
-docker run --rm fibonacci:latest --calc 10
+docker run --rm fibonacci-calculator:latest --calc 10
 ```
 OUTPUT:
 ```bash
@@ -38,14 +38,14 @@ OUTPUT:
 The ```---check``` argument is used to check whether a number is part of the Fibonacci sequence or not.
 For example to check number 55 is part of Fibonacci sequence or not:
 ```bash
-docker run --rm fibonacci:latest --check 34
+docker run --rm fibonacci-calculator:latest --check 34
 ```
 
 ## Debug
 the ```-v``` or ```--verbose``` argument is used to show more details in outputs.
 for example in ```--calc``` argument we can see index numbers too.
 ```bash
-docker run --rm fibonacci:latest --calc 10 --verbose
+docker run --rm fibonacci-calculator:latest --calc 10 --verbose
 ```
 OUTPUT:
 ```
@@ -64,7 +64,7 @@ OUTPUT:
 and also in ```--check``` argument we can see index of input number if it is part of Fibonacci sequence.
 
 ```bash
-docker run --rm fibonacci:latest --check 34 --verbose
+docker run --rm fibonacci-calculator:latest --check 34 --verbose
 ```
 
 OUTPUT:

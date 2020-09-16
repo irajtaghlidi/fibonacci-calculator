@@ -4,8 +4,8 @@ RUN useradd --create-home fibo
 WORKDIR /home/fibo
 USER fibo
 
-COPY fibonacci.py .
-COPY start.py .
-COPY test.py .
+ARG CI_COMMIT_SHA
+ENV CI_COMMIT_SHA=${CI_COMMIT_SHA}
+ADD ${CI_COMMIT_SHA}.tgz /home/fibo
 
-ENTRYPOINT [ "python", "./start.py" ]
+ENTRYPOINT [ "python", "./app.py" ]

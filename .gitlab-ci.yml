@@ -1,0 +1,36 @@
+image: 'python:3.7.3-stretch'
+
+stages:
+- package
+- test
+- deploy
+
+Package:
+  stage: package
+  script:
+    - tar cz -f ${CI_COMMIT_SHA}.tgz app.py fibonacci.py
+  artifacts:
+    paths:
+    - ${CI_COMMIT_SHA}.tgz
+
+Test:
+  stage: test
+  script:
+    - tar xf ${CI_COMMIT_SHA}.tgz
+    - python test.py
+
+Deploy:
+  stage: deploy
+  image: docker:stable
+  services:
+    - docker:stable-dind
+  before_script:
+    - docker login -u "$CUSTOM_CI_REGISTRY_USER" -p "$CUSTOM_CI_REGISTRY_PASSWORD" $CUSTOM_CI_REGISTRY
+  script:
+    - docker build -f Dockerfile --build-arg CI_COMMIT_SHA=${CI_COMMIT_SHA} --pull -t "$CUSTOM_CI_REGISTRY_IMAGE:latest" .
+    - docker push "$CUSTOM_CI_REGISTRY_IMAGE:latest"
+  only:
+  - master
+  after_script:
+    - rm -f /root/.docker/config.json
+
