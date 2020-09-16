@@ -21,12 +21,14 @@ def check_number(input_int):
     Identify whether a number is part of the fibonacci sequence or not.
     we calculate fibinacci from 0 to equil or first number bigger than input number.
     If we pass the input number, then we just return False.
+    return: Identify result and Index number (start from 1)
     """
-    sequence_index = 1
+    sequence_index = 0
     fibonacci_number = 0
     while fibonacci_number <= input_int:
         if fibonacci_number == input_int:
-            return [True, sequence_index]
+            secuence_location = sequence_index + 1
+            return [True, secuence_location] # return with +1 to start form 1 for first element, instead 0 in lists/arrays key.
 
         sequence_index += 1
         fibonacci_number = fibonacci_element(sequence_index)
