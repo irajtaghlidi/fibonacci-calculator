@@ -16,6 +16,9 @@ class TestFibonacciMethods(unittest.TestCase):
         res = fibonacci.check_number(67)[0]
         self.assertFalse(res)
 
+    """
+    other corner-case situations (For example, entering wrong expressions into arguments like string, negative integer and flout number) handles with the argparse python library.
+    """
 
 if __name__ == '__main__':
     unittest.main()
