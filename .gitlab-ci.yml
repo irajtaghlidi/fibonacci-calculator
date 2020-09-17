@@ -27,7 +27,7 @@ Deploy:
   before_script:
     - docker login -u "$CUSTOM_CI_REGISTRY_USER" -p "$CUSTOM_CI_REGISTRY_PASSWORD" $CUSTOM_CI_REGISTRY
   script:
-    - docker build -f Dockerfile --build-arg CI_COMMIT_SHA=${CI_COMMIT_SHA} --pull -t "$CUSTOM_CI_REGISTRY_IMAGE:latest" .
+    - docker build -f Dockerfile --pull -t "$CUSTOM_CI_REGISTRY_IMAGE:latest" .
     - docker push "$CUSTOM_CI_REGISTRY_IMAGE:latest"
   only:
   - master
