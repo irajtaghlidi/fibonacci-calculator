@@ -5,7 +5,7 @@ WORKDIR /home/fibo
 USER fibo
 
 COPY fibonacci.py .
-COPY start.py .
+COPY app.py .
 COPY test.py .
 
 ENTRYPOINT [ "python", "./app.py" ]
