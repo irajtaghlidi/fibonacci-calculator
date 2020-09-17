@@ -18,7 +18,7 @@ docker pull irajtaghlidi/fibonacci-calculator:latest
 ```
 
 ## Usage
-Show help of application from local builed image:
+Show application help:
 ```bash
 docker run --rm irajtaghlidi/fibonacci-calculator:latest --help
 ```
